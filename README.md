@@ -8,7 +8,9 @@ Step 1: Run with terminal : npm install
 Step 2: Running:
 
 FOR WINDOW :
+
 Run with terminal : set NODE_ENV=production
+
 Run with terminal : node server
 
 FOR LINUX/MAC:
