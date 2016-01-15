@@ -23,7 +23,9 @@ Run with terminal: npm install -g cucumber
 
 Starting Test:You need to run app with test environment
 FOR WINDOW :
+
 Run with terminal : set NODE_ENV=test
+
 Run with terminal : node server
 
 FOR LINUX/MAC:
