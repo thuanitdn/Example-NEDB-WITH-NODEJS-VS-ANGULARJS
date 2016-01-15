@@ -1,0 +1,7 @@
+{
+  "dataStore":{
+    "development":"./storage/nedb/development",
+    "production":"./storage/nedb/production",
+    "test":"./storage/nedb/test"
+  }
+}

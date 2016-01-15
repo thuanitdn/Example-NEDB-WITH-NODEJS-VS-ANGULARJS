@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Todo App</title>
+    <meta name="description" content="">
+    <meta name="author" content="Thuan Le">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <style>
+        .button {
+            border-radius: 100px;
+        }
+        .section {
+            padding: 8rem 0 7rem;
+            text-align: center;
+        }
+        .section-heading,
+        .section-description {
+            margin-bottom: 1.2rem;
+        }
+        .phones {
+            position: relative;
+        }
+        .phone {
+            position: relative;
+            max-width: 80%;
+            margin: 3rem auto -12rem;
+        }
+        .phone + .phone {
+            display: none;
+        }
+        .values {
+            background: linear-gradient(#c2e59c,#64b3f4);
+            background-size: cover;
+            color: #fff;
+            padding-bottom: 5rem;
+        }
+        .value-heading {
+            margin-bottom: .3rem;
+        }
+        .value-description {
+            opacity: .8;
+            font-weight: 300;
+        }
+
+        .get-help {
+            border-bottom: 1px solid #ddd;
+        }
+        .categories .section-description {
+            margin-bottom: 4rem;
+        }
+
+        /* Bigger than 550 */
+        @media (min-width: 550px) {
+            .section {
+                padding: 12rem 0 11rem;
+            }
+            .hero {
+                padding-bottom: 12rem;
+                text-align: left;
+                height: 165px;
+            }
+            .phone {
+                position: absolute;
+                top: -7rem;
+                right: 3rem;
+                max-height: 362px;
+                z-index: 3;
+            }
+            .phone + .phone {
+                top: -6rem;
+                display: block;
+                max-width: 73.8%;
+                right: 0;
+                z-index: 2;
+                max-height: 338px;
+            }
+            .hero-heading {
+                font-size: 2.4rem;
+            }
+        }
+
+        /* Bigger than 750 */
+        @media (min-width: 750px) {
+            .hero {
+                height: 190px;
+            }
+            .hero-heading {
+                font-size: 2.6rem;
+            }
+            .section {
+                padding: 14rem 0 15rem;
+            }
+            .hero {
+                padding: 16rem 0 14rem;
+            }
+            .section-description {
+                max-width: 60%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .phone {
+                top: -14rem;
+                right: 5rem;
+                max-height: 510px;
+            }
+            .phone + .phone {
+                top: -12rem;
+                max-height: 472px;
+            }
+            .categories {
+                padding: 15rem 0 8rem;
+            }
+        }
+
+        /* Bigger than 1000 */
+        @media (min-width: 1000px) {
+            .section {
+                padding: 20rem 0 19rem;
+            }
+            .hero {
+                padding: 22rem 0;
+            }
+            .hero-heading {
+                font-size: 3.0rem;
+            }
+            .phone {
+                top: -16rem;
+                max-height: 615px;
+            }
+            .phone + .phone {
+                top: -14rem;
+                max-height: 570px;
+            }
+        }
+        /**thuanle
+
+        */
+
+
+        .item-2 {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            position: fixed;
+            top:10px;
+            left:10px;
+            cursor: default;
+            box-shadow:
+                    inset 0 0 0 15px rgba(255,255,255,0.6),
+                    0 1px 2px rgba(0,0,0,0.1);
+
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+
+
+
+        .img-2 {
+            background: url('img/homepage/rsz_1thuanle.png') center;
+        }
+
+
+
+        .info-2{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+
+        .info-2 {
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform: scale(0);
+
+            -webkit-backface-visibility: hidden;
+        }
+
+
+
+        .info-2 h4
+        {
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+            letter-spacing: 2px;
+            line-height: 90px;
+            font-size: 7px;
+            text-align: center;
+            font-family:
+                    'Open Sans',
+                    Arial,
+                    sans-serif;
+            text-shadow:
+                    0 0 1px #fff,
+                    0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .item-2:hover {
+            box-shadow:
+                    inset 0 0 0 110px rgba(161,112,57, 0.8),
+                    0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .item-2:hover .info-2{
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="item-2 img-2">
+    <div class="info-2">
+       <a href="https://github.com/thuanitdn/workshop" target="_blank"><h4>Visit Github</h4></a>
+    </div>
+</div>
+<div class="section hero">
+    <div class="container">
+        <div class="row">
+            <div class="one-half column">
+                <h4 class="hero-heading">Accomplish more, every day.Manage tasks anywhere with TodoApp.</h4>
+                <a class="button button-primary" href="/register">Get Started!</a>  or <a href="/login">Signin</a>
+            </div>
+            <div class="one-half column phones">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section values">
+    <div class="container">
+        <div class="row">
+            <div class="one-half column value">
+                <h2 class="ion ion-qr-scanner"></h2>
+                <h5 class="value-heading">Manage Board</h5>
+                <p class="value-description">Manage board for each your project.</p>
+            </div>
+            <div class="one-half column value">
+                <h2 class="ion-document"></h2>
+                <h5 class="value-heading">Task</h5>
+                <p class="value-description">Add a task and more into board..</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section get-help">
+    <div class="container">
+        <h3 class="section-heading">Need help getting started?</h3>
+        <p class="section-description">TodoApp is an application created by ThuanLe. If you want to learn more, just visit the github!</p>
+    </div>
+</div>
+
+</body>
+</html>

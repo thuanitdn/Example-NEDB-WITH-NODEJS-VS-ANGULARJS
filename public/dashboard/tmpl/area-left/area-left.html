@@ -1,0 +1,16 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul data-ng-init="initLoadProject()" class="sidebar-menu">
+            <li class="header">PROJECT</li>
+            <li ng-repeat="data in listProject | orderBy:'dateActive'"><a ng-click="switchToTaskPage(data)" href="#"><i class="fa fa-circle-o text-red"></i> <span>{{data.project}}</span></a></li>
+            <li ng-show="!chopSwitchUiProject"><a ng-click="switchFormAddProject()"><i class="ion-android-add"></i> add project</a></li>
+            <li ng-show="chopSwitchUiProject">
+                <form ng-submit="addProject(projectName)">
+                <input class="form-control form-create-project" type="text" required ng-model="projectName" />
+                <br>
+                <button ng-disabled="chopDisBtnProject" type="submit" class="btn btn-info">Add</button> <button type="button" ng-disabled="chopDisBtnProject" ng-click="switchFormAddProject()" class="btn">Cancel</button>
+                </form>
+            </li>
+        </ul>
+    </section>
+</aside>

@@ -1,0 +1,42 @@
+<div id="taskPage">
+    <div ng-show="alertTaskFinish" style="position: fixed;top:10%;right:30%" class="alert alert-success" role="alert">1 item completed</div>
+    <div ng-show="alertTaskRemove" style="position: fixed;top:20%;right:30%" class="alert alert-success" role="alert">1 item removed</div>
+    <div style="min-height: 549px" data-ng-init="initLoadTask()" class="panel panel-default">
+        <div class="panel-heading">
+            {{ currentProjectName }} <span ng-show="listTaskDone.length >= 1" style="margin-left:15%;color:green;text-decoration: line-through;">{{ listTaskDone.length }} task completed</span>
+            <div ng-hide="currentProjectName == 'Personal'" class="dropdown pull-right">
+                <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="ion ion-settings"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                   <li><a ng-click="switchUiRename()" href="#">Rename project</a></li>
+                    <li><a ng-click="removeProject(currentProjectId)" href="#">Delete project</a></li>
+                </ul>
+            </div>
+            <div ng-show="uiRename" style="width:50%;margin-left:40% " class="input-group">
+                <input type="text" class="form-control" ng-model="valueRenameProject" aria-describedby="basic-addon2" required>
+                <span ng-click="renameProjectFunc()" class="input-group-addon" id="basic-addon2">Rename</span>
+                <span ng-click="switchUiRename()" class="input-group-addon" id="basic-addon2">Cancel</span>
+            </div>
+        </div>
+        <div data-ng-init="initLoadTask()" class="panel-body">
+            <ul>
+                <li data-ng-repeat="data in listTask | orderBy:'dateActive'">
+                    <a ng-click="finishTask(data._id)" href="#"><span style="margin-right:20px" class="ion-ios-checkmark-outline"></span></a>
+                    <a ng-click="removeTask(data._id)" href="#"><span style="margin-right:20px" class="ion-ios-close-outline"></span></a>
+                    {{ data.task }}</li>
+            </ul>
+            <div class="row form-task">
+                <a ng-click="switchFormAddTask()" ng-show="!chopSwitchUiTask" href="#">+ add task</a>
+                <div ng-show="chopSwitchUiTask">
+                    <form ng-submit="switchFormAddTask()">
+                    <input class="text-form-task form-control" type="text"  ng-model="task"  placeholder="Get a task..." />
+                    <br>
+                    <button type="submit" class="btn btn-primary" ng-click="addTask()">Add</button>
+                    <button class="btn" >Cancel</button>
+                    </form>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>

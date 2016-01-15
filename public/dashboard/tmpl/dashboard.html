@@ -1,0 +1,63 @@
+<div class="area-left" ui-view="area-left"></div>
+<div class="area-top" ui-view="area-top"></div>
+<div class="area-main content-wrapper">
+    <div style="margin-top: 5px;" class="col-md-8" ui-view>
+
+    </div>
+    <div style="margin-top: 5px" class="col-md-4">
+        <div class="box box-primary direct-chat direct-chat-warning">
+            <div class="box-header with-border">
+                <h3 class="box-title">Direct Chat</h3>
+                <span class="label label-primary">{{ userOnline }} online</span>
+                <div class="box-tools pull-right">
+                    <span data-toggle="tooltip" title="New Messages" class="badge bg-yellow">{{ listMessageSocketIo.length }}</span>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="box-chat" style="height: 450px;overflow-y: auto" class="box-body">
+                <div data-ng-repeat="data in listMessageSocketIo">
+                    <div style="width: 95%;margin-left:2%" class="direct-chat-msg left" ng-if="data.username === userProfile.displayName">
+                        <div class="direct-chat-info clearfix">
+                            <span class="direct-chat-name pull-right">{{data.username}}</span>
+                            <span class="direct-chat-timestamp pull-left">{{ data.time }}</span>
+                        </div>
+                        <span style="background:#3c8dbc " class="direct-chat-img"></span>
+                        <div style="min-height:30px" class="direct-chat-text">
+                            <i style="word-wrap: break-word;">{{data.mes}}</i>
+                        </div>
+                    </div>
+                    <div style="width: 95%;margin-right:2%" class="direct-chat-msg right" ng-if="data.username !== userProfile.displayName">
+                        <div class="direct-chat-info clearfix">
+                            <span class="direct-chat-name pull-right">{{data.username}}</span>
+                            <span class="direct-chat-timestamp pull-left">{{ data.time }}</span>
+                        </div>
+                        <span style="background:#f39c12 " class="direct-chat-img"></span>
+                        <div style="min-height:30px" class="direct-chat-text">
+                            <i style="word-wrap: break-word;">{{data.mes}}</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <form ng-submit="ioCreateMessage(messageSocket)">
+                    <div class="input-group">
+                        <input ng-model="messageSocket" type="text" name="message" placeholder="Type Message ..." class="form-control">
+                          <span class="input-group-btn">
+                            <button type="submit" class="btn btn-warning btn-flat">Send</button>
+                          </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div ng-show="newMessageAlert !== null" style="position: fixed;bottom:10px;right:10px;width: 400px;z-index:6969;background: #f39c12;color:#fff" class="alert alert-info" role="alert">{{ newMessageAlert.username }}: {{ newMessageAlert.mes }}</div>
+</div>
+<loading />
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 1.0
+    </div>
+    <strong>Created And Design By ThuanLe.</strong>
+</footer>
+<div class="control-sidebar-bg"></div>

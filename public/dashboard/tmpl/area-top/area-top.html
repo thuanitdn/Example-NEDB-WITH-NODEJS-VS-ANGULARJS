@@ -1,0 +1,26 @@
+<header class="main-header">
+    <a href="#" class="logo">
+        <span class="logo-mini"><b>T</b>A</span>
+        <span class="logo-lg"><b>Todo</b>App</span>
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+            <div ng-show="rootSpinner" class="loader">
+                <i style="color:#fff" class="fa fa-2x fa-spinner fa-spin"></i>
+            </div>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="hidden-xs">{{ userProfile.displayName }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/logout" data-toggle="control-sidebar"><i class="ion-power"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

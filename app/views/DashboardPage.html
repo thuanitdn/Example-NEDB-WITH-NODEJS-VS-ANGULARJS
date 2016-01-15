@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Todo App</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="/dashboard/res/css/app.min.css">
+    <link rel="stylesheet" href="/dashboard/res/css/skin-blue.min.css">
+    <link rel="stylesheet" href="/dashboard/res/css/build/assert.min.css">
+    <link rel="stylesheet" href="/dashboard/res/css/spinner.css">
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body ng-app="hello-dashboard" class="hold-transition skin-blue-light sidebar-mini">
+<div class="wrapper" ui-view=""></div>
+<script>
+    window._AppGlobalData = {
+        Url: {
+            base: '/dashboard/',
+            api: '/'
+        },
+        User: {
+            username: '{{ userName }}'
+        }
+    };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/async/1.5.2/async.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/dashboard/res/js/app.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="/dashboard/app/app.js"></script>
+<script type="text/javascript" src="/dashboard/app/routes.js"></script>
+<script type="text/javascript" src="/dashboard/app/directives/UIDirective.js"></script>
+<script type="text/javascript" src="/dashboard/app/api/ServiceProxy.js"></script>
+<script type="text/javascript" src="/dashboard/app/api/Proxy.js"></script>
+<script type="text/javascript" src="/dashboard/app/controllers/DashboardController.js"></script>
+<script type="text/javascript" src="/dashboard/app/controllers/TaskController.js"></script>
+</body>
+</html>

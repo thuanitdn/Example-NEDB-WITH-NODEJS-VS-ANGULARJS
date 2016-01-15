@@ -1,0 +1,8 @@
+{
+  "properties":{
+    "staticFolder":"./public",
+    "viewFolder":"./app/views",
+    "fileLoggerInfo":"storage/logs/filelog-info.log",
+    "fileLoggerError":"storage/logs/filelog-error.log"
+  }
+}
