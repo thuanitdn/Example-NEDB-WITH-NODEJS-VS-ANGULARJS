@@ -1,6 +1,5 @@
 This project build within 1 week with NODEJS, NEDB and ANGULARJS.
 
-DEMO: http://todoapp-thuanitdn.rhcloud.com/   Or http://todoappthuanle.herokuapp.com/
 
 How to install ?
 
@@ -14,7 +13,7 @@ Run with terminal : set NODE_ENV=production
 Run with terminal : node server
 
 FOR LINUX/MAC:
-npm start
+NODE_ENV=production node server.js
 
 For test:
 I'm use BDD TEST. Please install cucumber before test
@@ -29,13 +28,16 @@ Run with terminal : set NODE_ENV=test
 Run with terminal : node server
 
 FOR LINUX/MAC:
-Run with terminal : NODE_ENV=test && node server
+Run with terminal : NODE_ENV=test node server.js
 
 For example :
 
 BDD test for project api:
+
 Run with terminal: cucumber-js test/project.feature
+
 BDD test for task api:
+
 Run with terminal: cucumber-js test/task.feature
 
 
