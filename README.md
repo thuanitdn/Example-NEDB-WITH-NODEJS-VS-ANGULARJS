@@ -1,6 +1,6 @@
 This project build within 1 week with NODEJS, NEDB and ANGULARJS.
 
-DEMO: http://todoapp-thuanitdn.rhcloud.com/   Or todoappthuanle.herokuapp.com
+DEMO: http://todoapp-thuanitdn.rhcloud.com/   Or http://todoappthuanle.herokuapp.com/
 
 How to install ?
 
