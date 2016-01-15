@@ -34,8 +34,11 @@ Run with terminal : NODE_ENV=test && node server
 For example :
 
 BDD test for project api:
+
 Run with terminal: cucumber-js test/project.feature
+
 BDD test for task api:
+
 Run with terminal: cucumber-js test/task.feature
 
 
