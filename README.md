@@ -13,7 +13,7 @@ Run with terminal : set NODE_ENV=production
 Run with terminal : node server
 
 FOR LINUX/MAC:
-npm start
+NODE_ENV=production node server.js
 
 For test:
 I'm use BDD TEST. Please install cucumber before test
@@ -28,7 +28,7 @@ Run with terminal : set NODE_ENV=test
 Run with terminal : node server
 
 FOR LINUX/MAC:
-Run with terminal : NODE_ENV=test && node server
+Run with terminal : NODE_ENV=test node server.js
 
 For example :
 
