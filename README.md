@@ -1,5 +1,7 @@
 Currently i'm moving to es6 without babeljs instead of node v 6.0 support to 95% es6
 
+Example Node Api ES6: https://github.com/thuanitdn/Node-ES6-Write-API-Example
+
 This project build within 1 week with NODEJS, NEDB and ANGULARJS.
 http://todoapp-thuanitdn.rhcloud.com/
 http://todoappthuanle.herokuapp.com/
